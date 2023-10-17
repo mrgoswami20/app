@@ -152,25 +152,21 @@ const PatientDataApp = ({ contractAddress }) => {
   }, [contract, owner]);
 
   return (
-    <div>
-      <h1>Patient Data</h1>
-      <p>Your Wallet Address: {owner}</p>
-      {isOwner && <p>You are the owner.</p>}
-      <div>
-        <h2>Insert Data (Owner Only)</h2>
-        <input
-          type="text"
-          value={newData}
-          onChange={(e) => setNewData(e.target.value)}
-        />
-        {isOwner && <button onClick={insertData}>Insert Data</button>}
-      </div>
-      <div>
-        <h2>Retrieve Your Data</h2>
-        <button onClick={getPatientData}>Get Data</button>
-        <p>Your Data: {userData}</p>
-      </div>
-    </div>
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col mt-4">
+  <h1 class="text-3xl font-bold text-center">Patient Data</h1>
+  <p class="text-md text-gray-500">Your Wallet Address: {owner}</p>
+  {isOwner && <p class="text-sm text-gray-500">You are the owner.</p>}
+  <div class="mt-4">
+    <h2 class="text-2xl font-bold mb-4">Insert Data (Owner Only)</h2>
+    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" type="text" value={newData} onChange={(e) => setNewData(e.target.value)} />
+    {isOwner && <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={insertData} >Insert Data</button>}
+  </div>
+  <div class="mt-4">
+    <h2 class="text-2xl font-bold mb-4">Retrieve Your Data</h2>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={getPatientData}>Get Data</button>
+    <p class="text-md text-gray-500 mt-3">Your Data: {userData}</p>
+  </div>
+</div>
   );
 };
 
