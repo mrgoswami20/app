@@ -31,4 +31,5 @@ contract PatientDataStore {
     function hasPatientData(address patientAddress) public view returns (bool) {
         return bytes(patientData[patientAddress]).length > 0;
     }
+    //Our project
 }
